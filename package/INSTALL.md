@@ -1,6 +1,6 @@
 # Guia de Instalação — Bag Expander
 
-> ✅ Testado com **R.E.P.O. Build `23250495`** (2026-05-16) · **BepInExPack `5.4.23.5`** · **REPOConfig `1.2.6`** *(opcional)*
+> ✅ Testado com **R.E.P.O. Build `26407089`** (2026-11-06) · **BepInExPack `5.4.23.5`** · **REPOConfig `1.2.6`** *(opcional)*
 >
 > ⚠️ Se o jogo atualizar e o mod parar de funcionar, verifique se há uma versão nova do Bag Expander compatível.
 

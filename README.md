@@ -1,7 +1,7 @@
 # 🎒 Bag Expander
 
-[![Thunderstore](https://img.shields.io/badge/Thunderstore-v1.0.2-brightgreen?style=flat-square&logo=thunderstore)](https://thunderstore.io/c/repo/p/HiarlyScripter/BagExpander/)
-[![R.E.P.O.](https://img.shields.io/badge/R.E.P.O.-Build%2023250495-blue?style=flat-square)](https://store.steampowered.com/app/3241660/REPO/)
+[![Thunderstore](https://img.shields.io/badge/Thunderstore-v1.0.6-brightgreen?style=flat-square&logo=thunderstore)](https://thunderstore.io/c/repo/p/HiarlyScripter/BagExpander/)
+[![R.E.P.O.](https://img.shields.io/badge/R.E.P.O.-Build%2026407089-blue?style=flat-square)](https://store.steampowered.com/app/3241660/REPO/)
 [![BepInEx](https://img.shields.io/badge/BepInEx-5.4.23.5-yellow?style=flat-square)](https://thunderstore.io/c/repo/p/BepInEx/BepInExPack/)
 [![Licença](https://img.shields.io/badge/licença-crédito%20obrigatório-red?style=flat-square)](LICENSE)
 
@@ -67,4 +67,4 @@ Expande (ou reduz) o número de slots do inventário do jogador. Cada jogador co
 
 ---
 
-*Mod criado por **[HiarlyScripter](https://discord.com/users/hiarly_ferreira)** · Testado com R.E.P.O. Build `23250495` · BepInEx `5.4.23.5`*
+*Mod criado por **[HiarlyScripter](https://discord.com/users/hiarly_ferreira)** · Testado com R.E.P.O. Build `26407089` · BepInEx `5.4.23.5`*

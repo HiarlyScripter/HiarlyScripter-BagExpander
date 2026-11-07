@@ -1,7 +1,7 @@
 # 🎒 Bag Expander
 
-[![Versão](https://img.shields.io/badge/versão-1.0.2-brightgreen?style=flat-square)](https://thunderstore.io/c/repo/p/HiarlyScripter/BagExpander/)
-[![R.E.P.O.](https://img.shields.io/badge/R.E.P.O.-Build%2023250495-blue?style=flat-square)](https://store.steampowered.com/app/3241660/REPO/)
+[![Versão](https://img.shields.io/badge/versão-1.0.6-brightgreen?style=flat-square)](https://thunderstore.io/c/repo/p/HiarlyScripter/BagExpander/)
+[![R.E.P.O.](https://img.shields.io/badge/R.E.P.O.-Build%2026407089-blue?style=flat-square)](https://store.steampowered.com/app/3241660/REPO/)
 [![BepInEx](https://img.shields.io/badge/BepInEx-5.4.23.5-yellow?style=flat-square)](https://thunderstore.io/c/repo/p/BepInEx/BepInExPack/)
 [![Multiplayer](https://img.shields.io/badge/Multiplayer-Todos%20os%20jogadores-e74c3c?style=flat-square)]()
 [![REPOConfig](https://img.shields.io/badge/REPOConfig-compatível-orange?style=flat-square)](https://thunderstore.io/c/repo/p/nickklmao/REPOConfig/)
@@ -100,4 +100,4 @@ Edite em `BepInEx/config/com.hiarlyscripter.bagexpander.cfg` ou use o **REPOConf
 
 ---
 
-*Mod criado por **[HiarlyScripter](https://discord.com/users/hiarly_ferreira)** — Testado com R.E.P.O. Build `23250495` · BepInEx `5.4.23.5`*
+*Mod criado por **[HiarlyScripter](https://discord.com/users/hiarly_ferreira)** — Testado com R.E.P.O. Build `26407089` · BepInEx `5.4.23.5`*

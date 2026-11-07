@@ -2,6 +2,14 @@
 
 ---
 
+## v1.0.6 - 2026-11-06
+
+### Fixed
+- Compatibility with the 2026-11-06 R.E.P.O. update (build 26407089, Unity 6000.3.17)
+- Extra inventory slots are now created before the game's new inventory layout runs, so the game positions them automatically
+
+---
+
 ## v1.0.5 - 2026-06-02
 
 ### Changed

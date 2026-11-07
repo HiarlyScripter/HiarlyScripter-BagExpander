@@ -74,6 +74,10 @@ O Postfix em `InventorySpot.Update` verifica `inventorySpotIndex >= 3` antes de 
 
 ## Arquitetura do mod
 
-- **`Core.cs`** — entrada BepInEx, configurações, inicialização do Harmony
-- **`SlotRegistry.cs`** — rastreador de estado dos slots extras em memória
-- **`Patches.cs`** — todos os patches Harmony (7 no total)
+- **`Core.cs`** — tudo em um arquivo: entrada BepInEx, configurações, `EquipTracker` (rastreio dos slots extras) e `SlotPatches` (7 patches Harmony). `SlotRegistry.cs` e `Patches.cs` nunca existiram na fonte atual.
+
+---
+
+## v1.0.6 — 2026-11-06 — build 26407089 (Unity 6000.3.17)
+
+`InventoryUI` foi reescrita: `Awake` chama `LayoutSetup()` (guarda a lista de slots) e `LateUpdate` reposiciona só esses slots. O Postfix antigo em `Start` criava os clones tarde demais. Agora é um Prefix em `InventoryUI.Awake` que clona antes do layout, sem posição manual; rótulos via `InputGlyphText.SetTemplate`. Demais hooks verificados por decompilação (sem mudanças). Testado pelo autor: aprovado.

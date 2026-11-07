@@ -14,7 +14,7 @@ using Photon.Pun;
 
 namespace BagExpander
 {
-    [BepInPlugin("com.hiarlyscripter.bagexpander", "Bag Expander", "1.0.0")]
+    [BepInPlugin("com.hiarlyscripter.bagexpander", "Bag Expander", "1.0.6")]
     public sealed class BagExpanderPlugin : BaseUnityPlugin
     {
         internal static BagExpanderPlugin Instance { get; private set; }
@@ -58,7 +58,7 @@ namespace BagExpander
                 "O host não consegue forçar slots extras em clientes que não têm o mod.");
 
             new Harmony("com.hiarlyscripter.bagexpander").PatchAll(typeof(SlotPatches));
-            Log.LogInfo("Bag Expander v1.0.0 carregado.");
+            Log.LogInfo("Bag Expander v1.0.6 carregado.");
         }
     }
 
