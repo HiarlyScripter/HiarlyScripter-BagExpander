@@ -118,9 +118,6 @@ namespace BagExpander
         private static readonly FieldInfo _spotsListField =
             AccessTools.Field(typeof(Inventory), "inventorySpots");
 
-        private static readonly FieldInfo _uiChildrenField =
-            AccessTools.Field(typeof(InventoryUI), "allChildren");
-
         private static readonly MethodInfo _handleInputMethod =
             AccessTools.Method(typeof(InventorySpot), "HandleInput");
 
@@ -135,61 +132,44 @@ namespace BagExpander
         }
 
         // ── 2. Ajusta a UI de slots ───────────────────────────────────────────
-        [HarmonyPostfix]
-        [HarmonyPatch(typeof(InventoryUI), "Start")]
-        static void AdjustSlotVisuals(InventoryUI __instance)
+        // Prefixo em InventoryUI.Awake: os slots precisam existir ANTES do LayoutSetup()
+        // do jogo, que guarda a lista de slots e reposiciona tudo no LateUpdate.
+        // Assim o layout nativo posiciona os slots extras sozinho (sem posição manual).
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(InventoryUI), "Awake")]
+        static void PrepareSlotsBeforeLayout(InventoryUI __instance)
         {
             int target = BagExpanderPlugin.SlotCount.Value;
             if (target == 3) return;
 
-            Transform root     = ((Component)__instance).transform;
-            var uiChildren     = _uiChildrenField?.GetValue(__instance) as List<GameObject>;
-            float spacing      = 40f;
-            float originX      = -(target * spacing) / 2f + spacing / 2f;
-
-            if (target < 3)
+            var spots = ((Component)__instance).GetComponentsInChildren<InventorySpot>(true)
+                .OrderBy(s => s.inventorySpotIndex).ToList();
+            if (spots.Count == 0)
             {
-                for (int i = 0; i < 3; i++)
-                {
-                    Transform node = root.Find($"Inventory Spot {i + 1}");
-                    if (node == null) continue;
-                    if (i < target)
-                        node.localPosition = new Vector3(originX + i * spacing, node.localPosition.y, 0f);
-                    else
-                    {
-                        node.gameObject.SetActive(false);
-                        uiChildren?.Remove(node.gameObject);
-                    }
-                }
+                BagExpanderPlugin.Log.LogWarning("InventoryUI sem InventorySpot; slots não ajustados.");
                 return;
             }
 
-            Transform tpl = root.Find("Inventory Spot 1") ?? (root.childCount > 0 ? root.GetChild(0) : null);
-            if (tpl == null) return;
-
-            for (int i = 0; i < target; i++)
+            if (target < 3)
             {
-                if (i < 3)
-                {
-                    Transform existing = root.Find($"Inventory Spot {i + 1}");
-                    if (existing != null)
-                        existing.localPosition = new Vector3(originX + i * spacing, existing.localPosition.y, 0f);
-                    continue;
-                }
-
-                Transform clone = UnityEngine.Object.Instantiate(tpl, tpl.parent);
-                clone.name = $"Inventory Spot {i + 1}";
-
-                var spotComp = clone.GetComponent<InventorySpot>();
-                spotComp.inventorySpotIndex = i;
-
-                var numLabel = clone.Find("Numbers")?.GetComponent<TextMeshProUGUI>();
-                if (numLabel != null) numLabel.text = (i + 1).ToString();
-                if (spotComp.noItem != null) spotComp.noItem.text = (i + 1).ToString();
-
-                clone.localPosition = new Vector3(originX + i * spacing, tpl.localPosition.y, 0f);
-                uiChildren?.Add(clone.gameObject);
+                for (int i = target; i < spots.Count; i++)
+                    spots[i].gameObject.SetActive(false);
+                return;
             }
+
+            InventorySpot tpl = spots[0];
+            for (int i = spots.Count; i < target; i++)
+            {
+                InventorySpot clone = UnityEngine.Object.Instantiate(tpl, tpl.transform.parent);
+                clone.name = $"Inventory Spot {i + 1}";
+                clone.inventorySpotIndex = i;
+                clone.gameObject.SetActive(true);
+
+                string label = (i == 9) ? "0" : (i + 1).ToString();
+                foreach (var glyph in clone.GetComponentsInChildren<InputGlyphText>(true))
+                    glyph.SetTemplate(label);
+            }
+            BagExpanderPlugin.Log.LogInfo($"Slots de inventário: {target} (UI criada antes do layout).");
         }
 
         // ── 3. Teclas de atalho para slots 4–10 ──────────────────────────────
