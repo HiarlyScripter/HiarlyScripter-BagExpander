@@ -1,4 +1,4 @@
-# 📋 Guia de Upload — Nexus Mods (BagExpander v1.0.2)
+# 📋 Guia de Upload — Nexus Mods (BagExpander v1.0.6)
 
 ## URL
 ```
@@ -14,7 +14,7 @@ https://www.nexusmods.com/repo/mods/add
 | **Mod Name** | `Bag Expander` |
 | **Brief Summary** | `Expand or shrink your inventory from 0 to 10 slots. Full multiplayer support with host control and automatic hotkeys for extra slots.` |
 | **Category** | `Gameplay` |
-| **Version** | `1.0.2` |
+| **Version** | `1.0.6` |
 | **Language** | `Any` |
 
 ---
@@ -29,13 +29,13 @@ https://www.nexusmods.com/repo/mods/add
 
 **Arquivo principal:**
 ```
-C:\Users\Hiarly\.claude\PROJETOS\REPO\HiarlyScripter-BagExpander\BagExpander-v1.0.2-NexusMods.zip
+G:\IA\.claude\PROJETOS\REPO\HiarlyScripter-BagExpander\BagExpander-v1.0.6-NexusMods.zip
 ```
 
 | Campo | Valor |
 |---|---|
 | **File name** | `BagExpander` |
-| **Version** | `1.0.2` |
+| **Version** | `1.0.6` |
 | **Description** | `Main file — extract to your game folder. Requires BepInEx.` |
 | **Category** | ✅ Main file |
 
