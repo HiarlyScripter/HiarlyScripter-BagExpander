@@ -1,0 +1,225 @@
+[center][size=6][b]🎒 Bag Expander[/b][/size]
+[i]Configure sua mochila de 0 a 10 slots — do seu jeito.[/i][/center]
+
+[hr]
+
+[size=4][b]O que faz[/b][/size]
+
+O [b]Bag Expander[/b] permite configurar livremente o número de slots do inventário, de [b]0 a 10[/b] (padrão: 3). Funciona em singleplayer e multiplayer. Não precisa reiniciar o jogo — só recarregar a rodada.
+
+[hr]
+
+[size=4][b]Funcionalidades[/b][/size]
+
+[list]
+[*][b]Slots ajustáveis[/b] — de 0 a 10 (padrão: 3); recarregue a rodada para aplicar
+[*][b]Teclas automáticas[/b] — slots extras 4–10 respondem às teclas [font=Courier New]4[/font] [font=Courier New]5[/font] [font=Courier New]6[/font] [font=Courier New]7[/font] [font=Courier New]8[/font] [font=Courier New]9[/font] [font=Courier New]0[/font]
+[*][b]Controle do host[/b] — o host pode definir um limite máximo de slots para todos na sala
+[*][b]Itens na base[/b] — itens nos slots extras podem ficar na base entre rodadas em vez de voltar ao jogador
+[*][b]Compatível com REPOConfig[/b] — edite todas as configurações dentro do jogo, sem abrir nenhum arquivo [i](opcional)[/i]
+[/list]
+
+[hr]
+
+[size=4][b]Quem precisa instalar?[/b][/size]
+
+[b]Cada jogador precisa instalar o mod individualmente[/b] para ter slots extras na sua máquina.
+O host [b]não[/b] concede slots extras automaticamente para os clientes.
+
+[list]
+[*][b]Só o host tem o mod[/b] — só o host tem slots extras; clientes ficam com 3
+[*][b]Todos têm o mod[/b] — cada jogador usa seu próprio SlotCount configurado
+[*][b]Todos têm + HostControls = true[/b] — todos limitados ao SlotCount do host
+[*][b]Ninguém tem o mod[/b] — inventário padrão do jogo (3 slots)
+[/list]
+
+[hr]
+
+[size=4][b]Configurações[/b][/size]
+
+Edite em [font=Courier New]BepInEx/config/com.hiarlyscripter.bagexpander.cfg[/font] ou use o [b]REPOConfig[/b] dentro do jogo.
+
+[b]SlotCount[/b] [i](Seção: Slots · padrão: 3)[/i]
+Número de slots de inventário disponíveis, de 0 a 10. Recarregue a rodada para aplicar.
+
+[b]LeaveInBase[/b] [i](Seção: Slots · padrão: false)[/i]
+[font=Courier New]true[/font] = itens nos slots extras ficam na base ao trocar de rodada. [font=Courier New]false[/font] = retornam equipados ao jogador.
+
+[b]HostControls[/b] [i](Seção: Multiplayer · padrão: true)[/i]
+[font=Courier New]true[/font] = o SlotCount do host é o limite máximo para todos na sala. [font=Courier New]false[/font] = cada jogador usa livremente o seu próprio valor.
+
+[hr]
+
+[size=4][b]Instalação[/b][/size]
+
+[size=3][b]Via Vortex (recomendado)[/b][/size]
+[list=1]
+[*]Instale a [url=https://www.nexusmods.com/site/mods/1218]extensão do Vortex para R.E.P.O.[/url] se ainda não tiver
+[*]Clique em [b]Mod Manager Download[/b] nesta página — o Vortex instala tudo automaticamente
+[*]Faça o deploy dos mods e inicie o jogo
+[/list]
+
+[size=3][b]Instalação manual[/b][/size]
+[list=1]
+[*]Instale o [url=https://github.com/BepInEx/BepInEx/releases]BepInExPack[/url] primeiro
+[*]Extraia o ZIP — copie a pasta [font=Courier New]BepInEx/plugins/HiarlyScripter-BagExpander/[/font] para dentro de [font=Courier New]BepInEx/plugins/[/font] no diretório do jogo
+[*]Inicie o jogo — o arquivo de configuração é gerado automaticamente em [font=Courier New]BepInEx/config/com.hiarlyscripter.bagexpander.cfg[/font]
+[*](Opcional) Instale o [b]REPOConfig[/b] para editar as configs dentro do jogo
+[/list]
+
+[hr]
+
+[size=4][b]Requisitos[/b][/size]
+
+[b]Obrigatório:[/b]
+[list]
+[*][url=https://github.com/BepInEx/BepInEx/releases]BepInEx 5.4.23.5[/url]
+[/list]
+
+[b]Opcional:[/b]
+[list]
+[*]REPOConfig — edite as configurações dentro do jogo sem abrir nenhum arquivo
+[/list]
+
+[hr]
+
+[size=4][b]Problemas comuns[/b][/size]
+
+[b]Slots extras não aparecem na UI[/b]
+Recarregue a rodada após alterar o SlotCount.
+
+[b]Clientes ficam com 3 slots mesmo com o mod[/b]
+Cada jogador precisa instalar o mod individualmente — o host não distribui slots automaticamente.
+
+[b]O host está limitando meus slots[/b]
+O host tem [font=Courier New]HostControls = true[/font] com um SlotCount menor que o seu.
+
+[hr]
+
+[size=4][b]Changelog[/b][/size]
+
+[b]v1.0.2[/b] — Corrigido: binário limpo para melhor compatibilidade
+[b]v1.0.1[/b] — Corrigido: versão da dependência do BepInEx ajustada
+[b]v1.0.0[/b] — Lançamento inicial com todas as funcionalidades
+
+[hr]
+
+[center]Criado por [b]HiarlyScripter[/b] · Código-fonte no [url=https://github.com/HiarlyScripter/HiarlyScripter-BagExpander]GitHub[/url]
+Testado com R.E.P.O. Build [b]23250495[/b] · BepInEx [b]5.4.23.5[/b][/center]
+
+[hr]
+[hr]
+
+[center][i]— English version below —[/i][/center]
+
+[hr]
+[hr]
+
+[center][size=6][b]🎒 Bag Expander[/b][/size]
+[i]Configure your inventory from 0 to 10 slots — your game, your rules.[/i][/center]
+
+[hr]
+
+[size=4][b]What it does[/b][/size]
+
+[b]Bag Expander[/b] lets you freely configure the number of inventory slots from [b]0 to 10[/b] (default: 3). Works in singleplayer and multiplayer. No game restart required — just reload the round.
+
+[hr]
+
+[size=4][b]Features[/b][/size]
+
+[list]
+[*][b]Adjustable slots[/b] — 0 to 10 (default: 3); reload the round to apply
+[*][b]Automatic hotkeys[/b] — extra slots 4–10 respond to keys [font=Courier New]4[/font] [font=Courier New]5[/font] [font=Courier New]6[/font] [font=Courier New]7[/font] [font=Courier New]8[/font] [font=Courier New]9[/font] [font=Courier New]0[/font]
+[*][b]Host control[/b] — host can cap the maximum slots for everyone in the lobby
+[*][b]Leave in base[/b] — extra-slot items can stay at base between rounds instead of returning to the player
+[*][b]REPOConfig compatible[/b] — edit all settings in-game without touching any file [i](optional)[/i]
+[/list]
+
+[hr]
+
+[size=4][b]Who needs to install it?[/b][/size]
+
+[b]Each player must install the mod individually[/b] to get extra slots on their machine.
+The host does [b]not[/b] automatically grant extra slots to clients.
+
+[list]
+[*][b]Only the host has the mod[/b] — only the host gets extra slots; clients stay at 3
+[*][b]Everyone has the mod[/b] — each player uses their own configured SlotCount
+[*][b]Everyone has the mod + HostControls = true[/b] — all slots capped to the host's SlotCount
+[*][b]Nobody has the mod[/b] — default game inventory (3 slots)
+[/list]
+
+[hr]
+
+[size=4][b]Configuration[/b][/size]
+
+Edit at [font=Courier New]BepInEx/config/com.hiarlyscripter.bagexpander.cfg[/font] or use [b]REPOConfig[/b] in-game.
+
+[b]SlotCount[/b] [i](Section: Slots · default: 3)[/i]
+Number of inventory slots, from 0 to 10. Reload the round to apply.
+
+[b]LeaveInBase[/b] [i](Section: Slots · default: false)[/i]
+[font=Courier New]true[/font] = extra-slot items stay at base when changing rounds. [font=Courier New]false[/font] = items return equipped to the player.
+
+[b]HostControls[/b] [i](Section: Multiplayer · default: true)[/i]
+[font=Courier New]true[/font] = host's SlotCount is the maximum for everyone in the lobby. [font=Courier New]false[/font] = each player uses their own value freely.
+
+[hr]
+
+[size=4][b]Installation[/b][/size]
+
+[size=3][b]Via Vortex (recommended)[/b][/size]
+[list=1]
+[*]Install the [url=https://www.nexusmods.com/site/mods/1218]Vortex Extension for R.E.P.O.[/url] if you haven't already
+[*]Click [b]Mod Manager Download[/b] on this page — Vortex installs everything automatically
+[*]Deploy mods and launch the game
+[/list]
+
+[size=3][b]Manual install[/b][/size]
+[list=1]
+[*]Install [url=https://github.com/BepInEx/BepInEx/releases]BepInExPack[/url] first
+[*]Extract the ZIP — copy [font=Courier New]BepInEx/plugins/HiarlyScripter-BagExpander/[/font] into your game's [font=Courier New]BepInEx/plugins/[/font] folder
+[*]Launch the game — the config file is generated automatically at [font=Courier New]BepInEx/config/com.hiarlyscripter.bagexpander.cfg[/font]
+[*](Optional) Install [b]REPOConfig[/b] to edit settings in-game without opening any file
+[/list]
+
+[hr]
+
+[size=4][b]Requirements[/b][/size]
+
+[b]Required:[/b]
+[list]
+[*][url=https://github.com/BepInEx/BepInEx/releases]BepInEx 5.4.23.5[/url]
+[/list]
+
+[b]Optional:[/b]
+[list]
+[*]REPOConfig — edit settings in-game without opening any files
+[/list]
+
+[hr]
+
+[size=4][b]Troubleshooting[/b][/size]
+
+[b]Extra slots don't appear in the UI[/b]
+Reload the round after changing SlotCount.
+
+[b]Clients stuck at 3 slots even with the mod[/b]
+Each player must install the mod individually — the host doesn't distribute slots automatically.
+
+[b]Host is limiting my slots[/b]
+The host has [font=Courier New]HostControls = true[/font] with a lower SlotCount than yours.
+
+[hr]
+
+[size=4][b]Changelog[/b][/size]
+
+[b]v1.0.2[/b] — Fixed: binary cleaned up for better compatibility
+[b]v1.0.1[/b] — Fixed: BepInEx dependency version corrected
+[b]v1.0.0[/b] — Initial release with all core features
+
+[hr]
+
+[center]Made by [b]HiarlyScripter[/b] · Source on [url=https://github.com/HiarlyScripter/HiarlyScripter-BagExpander]GitHub[/url]
+Tested with R.E.P.O. Build [b]23250495[/b] · BepInEx [b]5.4.23.5[/b][/center]

@@ -4,8 +4,8 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "HiarlyScripter"
 name = "BagExpander"
-versionNumber = "1.0.2"
-description = "Expanda sua mochila! Configure de 0 a 10 slots de inventário, com suporte completo a multiplayer e modo base."
+versionNumber = "1.0.5"
+description = "Expand your bag! Configure from 0 to 10 inventory slots, with full multiplayer support and host control."
 websiteUrl = "https://discord.com/users/hiarly_ferreira"
 containsNsfwContent = false
 
@@ -20,6 +20,10 @@ outdir = "./build"
 [[build.copy]]
 source = "./package/plugins"
 target = ""
+
+[[build.copy]]
+source = "./package/CHANGELOG.md"
+target = "CHANGELOG.md"
 
 [publish]
 repository = "https://thunderstore.io"
